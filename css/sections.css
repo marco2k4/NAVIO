@@ -1,0 +1,195 @@
+/* ─────────────────────────────────────────
+   sections.css — Roadmap, About, Team cards
+───────────────────────────────────────── */
+
+/* ── About hero block ── */
+.about-hero {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 28px 26px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::after {
+  content: 'NAVIO';
+  position: absolute;
+  right: -10px;
+  bottom: -20px;
+  font-family: var(--font-display);
+  font-size: 100px;
+  font-weight: 800;
+  color: rgba(59, 158, 255, 0.04);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.about-hero-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.about-hero-title em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-hero-body {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* ── Phase cards ── */
+.phase-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.phase-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px 18px;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.phase-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 158, 255, 0.3);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+.phase-num {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.phase-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.phase-card-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.phase-card-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.phase-card-acc {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.phase-card:nth-child(1) .phase-card-acc {
+  background: rgba(59, 158, 255, 0.14);
+  color: var(--accent);
+}
+
+.phase-card:nth-child(2) .phase-card-acc {
+  background: rgba(0, 229, 192, 0.12);
+  color: var(--accent2);
+}
+
+.phase-card:nth-child(3) .phase-card-acc {
+  background: rgba(123, 92, 255, 0.14);
+  color: var(--accent3);
+}
+
+/* ── Map placeholder ── */
+.map-placeholder {
+  text-align: center;
+  padding: 60px 24px;
+}
+
+.map-placeholder-icon {
+  font-size: 48px;
+  margin-bottom: 14px;
+}
+
+/* ── Team ── */
+.team-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.team-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.team-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59, 158, 255, 0.25);
+}
+
+.team-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.av-1 { background: linear-gradient(135deg, var(--accent), var(--accent3)); }
+.av-2 { background: linear-gradient(135deg, var(--accent2), var(--accent)); }
+
+.team-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.team-role {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .phase-cards { grid-template-columns: 1fr; }
+  .team-row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,206 @@
+/* ─────────────────────────────────────────
+   schedule.css — Day strip & class cards
+───────────────────────────────────────── */
+
+/* Day selector strip */
+.day-strip {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 22px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.day-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.day-btn {
+  flex-shrink: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.day-btn:hover {
+  color: var(--text);
+  border-color: rgba(59, 158, 255, 0.2);
+}
+
+.day-btn.active {
+  background: linear-gradient(135deg, rgba(59, 158, 255, 0.2), rgba(123, 92, 255, 0.16));
+  border-color: rgba(59, 158, 255, 0.4);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Time label */
+.time-label {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+  padding-left: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.time-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Class list */
+.classes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Class item card */
+.class-item {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  cursor: pointer;
+  transition:
+    transform 0.22s var(--ease-spring),
+    border-color 0.2s,
+    box-shadow 0.2s;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  animation: fadeSlide 0.35s ease both;
+}
+
+.class-item:hover {
+  transform: translateY(-3px) scale(1.005);
+  border-color: rgba(59, 158, 255, 0.3);
+  box-shadow: var(--shadow-card);
+}
+
+/* Left accent bar */
+.class-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px 0 0 3px;
+}
+
+.class-item.color-blue::before   { background: var(--accent); }
+.class-item.color-teal::before   { background: var(--accent2); }
+.class-item.color-purple::before { background: var(--accent3); }
+.class-item.color-amber::before  { background: var(--accent-amber); }
+.class-item.color-rose::before   { background: var(--accent-rose); }
+
+/* Time block */
+.class-time-block {
+  text-align: center;
+  min-width: 52px;
+}
+
+.class-start {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+}
+
+.class-ampm {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* Divider */
+.class-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* Class info */
+.class-info {
+  flex: 1;
+}
+
+.class-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.class-meta {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.class-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Type badges */
+.class-badge {
+  font-size: 10.5px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.badge-lecture {
+  background: rgba(59, 158, 255, 0.14);
+  color: var(--accent);
+  border: 1px solid rgba(59, 158, 255, 0.2);
+}
+
+.badge-lab {
+  background: rgba(0, 229, 192, 0.12);
+  color: var(--accent2);
+  border: 1px solid rgba(0, 229, 192, 0.2);
+}
+
+.badge-seminar {
+  background: rgba(123, 92, 255, 0.14);
+  color: var(--accent3);
+  border: 1px solid rgba(123, 92, 255, 0.2);
+}
+
+/* Arrow */
+.class-arrow {
+  color: var(--text-muted);
+  font-size: 16px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.class-item:hover .class-arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}

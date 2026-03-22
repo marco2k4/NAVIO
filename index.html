@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>NAVIO - Never Get Lost on Campus Again</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/topbar.css" />
+  <link rel="stylesheet" href="../css/schedule.css" />
+  <link rel="stylesheet" href="../css/modal.css" />
+  <link rel="stylesheet" href="../css/sections.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+</head>
+<body>
+
+  <!-- Ambient background orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- ─── TOPBAR ─── -->
+  <header class="topbar">
+    <a class="logo" href="#">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="10" r="3" fill="white"/>
+          <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 14 8 14s8-8.75 8-14c0-4.42-3.58-8-8-8z"
+                stroke="white" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+      <span class="logo-text">NA<span>V</span>IO</span>
+    </a>
+
+    <nav class="nav-pills">
+      <button class="nav-pill active" data-section="schedule">Schedule</button>
+      <button class="nav-pill" data-section="roadmap">Roadmap</button>
+      <button class="nav-pill" data-section="map">Campus Map</button>
+      <button class="nav-pill" data-section="about">About</button>
+    </nav>
+
+    <div class="topbar-right">
+      <span class="phase-badge">Phase 1 Active</span>
+    </div>
+  </header>
+
+  <!-- ─── MAIN ─── -->
+  <main>
+
+    <!-- SCHEDULE SECTION -->
+    <section class="section active" id="section-schedule">
+      <div class="hero-block">
+        <div class="hero-label">My Classes</div>
+        <h1 class="hero-title">Your <em>Weekly Schedule</em></h1>
+        <p class="hero-sub">Tap any class to view details, find the room, or get AR directions.</p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-num" id="stat-today">5</div>
+          <div class="stat-label">Classes Today</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">21</div>
+          <div class="stat-label">This Week</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">SA</div>
+          <div class="stat-label">Main Building</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">±3m</div>
+          <div class="stat-label">Nav Accuracy</div>
+        </div>
+      </div>
+
+      <div class="day-strip" id="day-strip">
+        <button class="day-btn active" data-day="mon">Mon · Mar 23</button>
+        <button class="day-btn" data-day="tue">Tue · Mar 24</button>
+        <button class="day-btn" data-day="wed">Wed · Mar 25</button>
+        <button class="day-btn" data-day="thu">Thu · Mar 26</button>
+        <button class="day-btn" data-day="fri">Fri · Mar 27</button>
+      </div>
+
+      <div class="schedule-wrapper">
+        <!-- <div class="time-label">Morning</div> -->
+        <div class="classes-list" id="classes-list"></div>
+      </div>
+    </section>
+
+    <!-- ROADMAP SECTION -->
+    <section class="section" id="section-roadmap">
+      <div class="hero-block">
+        <div class="hero-label">Technology Roadmap</div>
+        <h1 class="hero-title">Three Phases,<br><em>One Mission</em></h1>
+        <p class="hero-sub">From QR codes to full AR vision — a progressive upgrade path built for reliability.</p>
+      </div>
+      <div class="phase-cards">
+        <div class="phase-card">
+          <div class="phase-num">Phase 01 · Months 1–3</div>
+          <div class="phase-icon">📍</div>
+          <div class="phase-card-title">QR Navigation</div>
+          <div class="phase-card-desc">200 QR codes at doors, stairwells, and corners. Scan to get instant turn-by-turn directions.</div>
+          <span class="phase-card-acc">±10m accuracy</span>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Phase 02 · Months 4–6</div>
+          <div class="phase-icon">📡</div>
+          <div class="phase-card-title">Bluetooth Beacons</div>
+          <div class="phase-card-desc">100–150 BLE beacons broadcast continuously. Auto-detects your position — no scanning needed.</div>
+          <span class="phase-card-acc">±3m accuracy</span>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Phase 03 · Months 7–8</div>
+          <div class="phase-icon">🥽</div>
+          <div class="phase-card-title">AR Vision</div>
+          <div class="phase-card-desc">3D blue arrows float on your camera feed. The first AR campus navigation in Canada.</div>
+          <span class="phase-card-acc">±1m accuracy</span>
+        </div>
+      </div>
+      <div class="about-hero">
+        <div class="about-hero-title">$20K Seed Fund<br><em>Zero Salaries</em></div>
+        <div class="about-hero-body">Every dollar of the FutureTech funding request goes directly to product development — hardware, software licenses, testing, and infrastructure. Phase 1 launches in 3 months, giving users real value from day one.</div>
+      </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="section" id="section-map">
+      <div class="hero-block">
+        <div class="hero-label">Campus Map</div>
+        <h1 class="hero-title"><em>SAIT Campus</em> Overview</h1>
+        <p class="hero-sub">Click any building to see beacon coverage and navigate.</p>
+      </div>
+      <div class="about-hero map-placeholder">
+        <div class="map-placeholder-icon">🏛️</div>
+        <div class="about-hero-title">Interactive Map</div>
+        <div class="about-hero-body">AR + Beacon-powered campus map will render here once Phase 2 hardware is installed. For now, use the QR scan feature via the schedule cards.</div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="section-about">
+      <div class="hero-block">
+        <div class="hero-label">The Team</div>
+        <h1 class="hero-title">Built By <em>SAIT Students</em><br>For SAIT Students</h1>
+      </div>
+      <div class="about-hero">
+        <div class="about-hero-title">Never Get Lost<br><em>on Campus Again</em></div>
+        <div class="about-hero-body">NAVIO is a capstone project solving a real problem every SAIT student faces. Starting with 14,000 students at SAIT, the vision expands to 2 million+ students across Canada through a B2B licensing model targeting colleges and universities.</div>
+      </div>
+      <div class="team-row">
+        <div class="team-card">
+          <div class="team-avatar av-1">D</div>
+          <div>
+            <div class="team-name">Dhruv</div>
+            <div class="team-role">Co-Founder · Software Dev</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar av-2">V</div>
+          <div>
+            <div class="team-name">Vansh</div>
+            <div class="team-role">Co-Founder · Software Dev</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── CLASS DETAIL MODAL ─── -->
+  <div class="overlay" id="overlay">
+    <div class="modal-wrapper" id="modal-wrapper">
+      <div class="modal-flipper" id="modal-flipper">
+
+        <!-- FRONT FACE: Class Details -->
+        <div class="modal-face modal-front">
+          <div class="modal-header" id="modal-header">
+            <div class="modal-header-glow"></div>
+            <button class="modal-close" id="modal-close-front">✕</button>
+            <div class="modal-type-badge" id="modal-badge"></div>
+            <div class="modal-title" id="modal-title">Class Name</div>
+            <div class="modal-code" id="modal-code">CODE 101</div>
+          </div>
+          <div class="modal-body">
+            <div class="detail-grid">
+              <div class="detail-item">
+                <div class="detail-item-label">Time</div>
+                <div class="detail-item-val" id="modal-time">—</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-item-label">Duration</div>
+                <div class="detail-item-val" id="modal-duration">—</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-item-label">Room</div>
+                <div class="detail-item-val" id="modal-room">—</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-item-label">Building</div>
+                <div class="detail-item-val" id="modal-building">—</div>
+              </div>
+            </div>
+            <div class="instructor-row">
+              <div class="instructor-avatar" id="modal-avatar">JS</div>
+              <div>
+                <div class="instructor-name" id="modal-instructor">Instructor</div>
+                <div class="instructor-role">Course Instructor</div>
+              </div>
+            </div>
+            <button class="map-btn" id="flip-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M3 11l19-9-9 19-2-8-8-2z"/>
+              </svg>
+              Navigate to Room
+            </button>
+          </div>
+        </div>
+
+        <!-- BACK FACE: QR Navigation -->
+        <div class="modal-face modal-back">
+          <button class="modal-close" id="modal-close-back">✕</button>
+          <div class="back-title" id="back-room-title">Room Navigation</div>
+          <div class="back-sub" id="back-room-sub">Scan QR code to start AR directions</div>
+          <div class="qr-container" id="qr-box"></div>
+          <div class="qr-tap-hint">
+            <span>👆</span> Tap QR code to view campus map
+          </div>
+          <button class="back-close-btn" id="unflip-btn">← Back to Class Details</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── MAP POPUP ─── -->
+  <div class="map-popup" id="map-popup">
+    <div class="map-popup-inner">
+      <div class="map-title" id="map-popup-title">Navigate to Room</div>
+      <div class="map-subtitle" id="map-popup-sub">Heritage Hall · Floor 2</div>
+      <div class="fake-map">
+        <svg viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="380" height="200" fill="#0d1220"/>
+          <rect x="20" y="90" width="340" height="22" rx="4" fill="#121929" stroke="#1e3050" stroke-width="1"/>
+          <rect x="180" y="20" width="22" height="162" rx="4" fill="#121929" stroke="#1e3050" stroke-width="1"/>
+          <rect x="30" y="30" width="60" height="52" rx="6" fill="#0f1b2e" stroke="#1e3050" stroke-width="1"/>
+          <rect x="105" y="30" width="60" height="52" rx="6" fill="#0f1b2e" stroke="#1e3050" stroke-width="1"/>
+          <rect x="215" y="30" width="60" height="52" rx="6" fill="#0f1b2e" stroke="#1e3050" stroke-width="1"/>
+          <rect x="290" y="30" width="60" height="52" rx="6" fill="#0f1b2e" stroke="#1e3050" stroke-width="1"/>
+          <rect x="30" y="128" width="60" height="52" rx="6" fill="#0f1b2e" stroke="#1e3050" stroke-width="1"/>
+          <rect x="105" y="128" width="60" height="52" rx="6" fill="#0f1b2e" stroke="#1e3050" stroke-width="1"/>
+          <rect x="215" y="128" width="60" height="52" rx="6" fill="#0f1b2e" stroke="#1e3050" stroke-width="1"/>
+          <rect x="290" y="128" width="60" height="52" rx="6" fill="#0f1b2e" stroke="#3b9eff" stroke-width="2"/>
+          <rect x="290" y="128" width="60" height="52" rx="6" fill="rgba(59,158,255,0.08)"/>
+          <text x="60" y="60" text-anchor="middle" fill="#2a4060" font-size="9" font-family="Syne,sans-serif">101</text>
+          <text x="135" y="60" text-anchor="middle" fill="#2a4060" font-size="9" font-family="Syne,sans-serif">102</text>
+          <text x="245" y="60" text-anchor="middle" fill="#2a4060" font-size="9" font-family="Syne,sans-serif">103</text>
+          <text x="320" y="155" text-anchor="middle" fill="#3b9eff" font-size="9" font-family="Syne,sans-serif" font-weight="bold" id="map-dest-label">104</text>
+          <polyline points="60,101 191,101 191,154 290,154" stroke="#3b9eff" stroke-width="2" fill="none" stroke-dasharray="5,4" stroke-linecap="round"/>
+          <circle cx="60" cy="101" r="7" fill="rgba(59,158,255,0.2)" stroke="#3b9eff" stroke-width="1.5"/>
+          <circle cx="60" cy="101" r="3.5" fill="#3b9eff"/>
+          <text x="60" y="84" text-anchor="middle" fill="#3b9eff" font-size="8" font-family="DM Sans,sans-serif">YOU</text>
+          <circle cx="320" cy="148" r="7" fill="rgba(0,229,192,0.2)" stroke="#00e5c0" stroke-width="1.5"/>
+          <circle cx="320" cy="148" r="3.5" fill="#00e5c0"/>
+        </svg>
+      </div>
+      <button class="map-close-btn" id="map-close-btn">Close Map</button>
+    </div>
+  </div>
+
+  <!-- QR Code Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- App Scripts -->
+  <script src="../js/data.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/schedule.js"></script>
+  <script src="../js/app.js"></script>
+
+</body>
+</html>

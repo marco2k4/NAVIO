@@ -1,0 +1,51 @@
+/* ─────────────────────────────────────────
+   variables.css — Design tokens & theme
+───────────────────────────────────────── */
+
+:root {
+  /* Colors */
+  --bg:           #06080f;
+  --surface:      #0d1220;
+  --surface2:     #121929;
+  --border:       rgba(99, 180, 255, 0.12);
+
+  --accent:       #3b9eff;
+  --accent2:      #00e5c0;
+  --accent3:      #7b5cff;
+  --accent-amber: #f5a623;
+  --accent-rose:  #ff5c7a;
+
+  --text:         #e8f0ff;
+  --text-muted:   #6b82a8;
+
+  --card-bg:      #111927;
+  --glow:         rgba(59, 158, 255, 0.18);
+  --glow2:        rgba(0, 229, 192, 0.13);
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+
+  /* Radius */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  20px;
+  --radius-2xl: 24px;
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-flip:   cubic-bezier(0.5, 0, 0.15, 1);
+
+  /* Shadows */
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35), 0 0 20px var(--glow);
+}

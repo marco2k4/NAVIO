@@ -1,0 +1,109 @@
+/* ─────────────────────────────────────────
+   topbar.css — Header, logo, nav pills
+───────────────────────────────────────── */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 62px;
+  background: rgba(6, 8, 15, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--accent), var(--accent3));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px rgba(59, 158, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.logo-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+.logo-text span {
+  color: var(--accent);
+}
+
+/* Nav pills */
+.nav-pills {
+  display: flex;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 4px;
+}
+
+.nav-pill {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.nav-pill:hover {
+  color: var(--text);
+}
+
+.nav-pill.active {
+  background: linear-gradient(135deg, rgba(59, 158, 255, 0.22), rgba(123, 92, 255, 0.18));
+  color: var(--accent);
+  border: 1px solid rgba(59, 158, 255, 0.3);
+}
+
+/* Right side */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phase-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, rgba(0, 229, 192, 0.15), rgba(59, 158, 255, 0.12));
+  border: 1px solid rgba(0, 229, 192, 0.3);
+  color: var(--accent2);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .topbar { padding: 0 16px; }
+  .nav-pills { display: none; }
+}
